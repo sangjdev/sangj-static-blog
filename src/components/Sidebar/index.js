@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'gatsby';
+import { Link,navigateTo } from 'gatsby';
 import onClickOutside from 'react-onclickoutside';
 import './style.scss';
 import * as baseActions from '../../state/modules/base';
@@ -12,24 +12,29 @@ class Sidebar extends Component {
     this.handleClickOutside = this.handleClickOutside.bind(
       this,
     );
+    this.goLink = this.goLink.bind(this);
   }
   handleClickOutside = evt => {
     if (this.props.visible) {
       this.props.hideSidebar();
     }
   };
+  goLink( linkName ) {
+    this.props.hideSidebar();
+    navigateTo('/'+linkName);
+  }
   render() {
     return (
       <Fragment>
         <div className="sidebar">
           <div className="sidebar__inner">
-            <Link to="/about">About</Link>
+            <span onClick={() => this.goLink('about')}>About</span>
           </div>
           <div className="sidebar__inner">
-            <Link to="/posts">Posts</Link>
+            <span onClick={() => this.goLink('posts')}>Posts</span>
           </div>
           <div className="sidebar__inner">
-            <Link to="/tags">Tags</Link>
+            <span onClick={() => this.goLink('tags')}>Tags</span>
           </div>
         </div>
         <div className="dim-layer" />
