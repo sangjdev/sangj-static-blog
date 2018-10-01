@@ -1,0 +1,42 @@
+@import '../../assets/scss/variables';
+@import '../../assets//scss/mixins';
+
+.posts {
+  margin: 0 auto;
+  // background-color: $color-base;
+  //   padding-top: 5px;
+  overflow: hidden;
+  &__card {
+    margin: 10px 0;
+    &__inner {
+      border-radius: 1.5px;
+      padding: 20px 3%;
+      background-color: #ffffff;
+      // @include box-shadow(0, 0.5px, 0.5px, #aba9a980);
+      border-bottom: 1px solid gainsboro;
+
+      &__title {
+        color: $color-primary;
+        font-family: 'Nanum Gothic';
+        letter-spacing: 0.12rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &__sub-title {
+        color: $color-primary;
+        letter-spacing: 0.08rem;
+        line-height: 1.5rem;
+        //   font-weight: 400;
+      }
+    }
+  }
+  &-link {
+    display: block;
+  }
+  &-link:hover {
+    // border: 5px solid black;
+    .posts__card__inner__title {
+      color: $color-tertiary;
+    }
+  }
+}

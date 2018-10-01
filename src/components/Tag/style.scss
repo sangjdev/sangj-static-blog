@@ -1,0 +1,12 @@
+@import '../../assets/scss/variables';
+
+.tag {
+  color: white;
+  display: inline-block;
+  background-color: $color-tertiary;
+  margin-right: 3px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  font-size: 13px;
+}
