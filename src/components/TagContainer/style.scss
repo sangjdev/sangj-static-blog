@@ -3,17 +3,22 @@
 
 .tags {
   &__header {
-    width: 100%;
+    width: 80%;
     height: 10vh;
     min-height: 80px;
     // padding: 1.4em 0px;
+    margin: 0 auto;
+    margin-top: 5%;
     text-align: center;
 
-    font-size: 30px;
+    font-size: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     // border-bottom: 1px solid gainsboro;
+
+    background-color: $color-primary;
+    color: white;
     // @include box-shadow(0px, 2px, 2px, #d6d2d280);
   }
 
@@ -29,7 +34,7 @@
     padding: 5%;
     text-align: center;
     background-color: $color-primary;
-    border-radius: 20px;
+    // border-radius: 20px;
     &__btn {
       color: white;
       display: inline-block;
@@ -52,10 +57,38 @@
     margin: 3% 3%;
     // margin-bottom: 5%;
     text-align: center;
-    background-color: $color-tertiary;
+    background-color: #545354;
     color: white;
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
-    border-radius: 18px;
+    // border-radius: 18px;
+    // transition: width 1.35s linear;
+    // -webkit-transition: width 1.35s linear;
+    // transition: background-color 1s ease-in-out 0.1s;
+    // transition: 0.25s all;
+
+    // 트랜지션속성
+    // transition-property trnastion-duration
+    // trnasition-time-funciton trnasiton delay
+
+    // &:hover {
+    //   background-color: $color-tertiary;
+    //   animation: tutsFade 0.25s 0.25s 1 normal backwards;
+    //   animation-timing-function: cubic-bezier(
+    //     0.215,
+    //     0.61,
+    //     0.355,
+    //     1
+    //   );
+    // }
+  }
+}
+@keyframes tutsFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    background-color: slateblue;
   }
 }

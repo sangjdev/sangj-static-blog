@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import styles from './style.scss';
-import '../../assets/fontello-dcb66a77/css/fontello.css';
 const cx = classNames.bind(styles);
 
 const Hamburger = ({ onOpen, active }) => {

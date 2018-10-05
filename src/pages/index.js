@@ -29,13 +29,18 @@ class index extends Component {
   }
 }
 
-// export default index;
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+export const IndexQuery = graphql`
+  query IndexBySlug {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            tags
+            description
+          }
+        }
       }
     }
   }

@@ -1,0 +1,21 @@
+@import '../../assets/scss/variables';
+
+.postDetail {
+  width: 100%;
+  padding: 5px 15px;
+  &__title {
+    padding-top: 30px;
+    color: $color-primary;
+    text-align: center;
+  }
+  &__status {
+    text-align: center;
+    padding-bottom: 10px;
+    color: $color-primary;
+  }
+  &__content {
+    margin-top: 10px;
+    color: $color-primary;
+    overflow: hidden;
+  }
+}

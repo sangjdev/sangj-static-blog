@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import Tags from '../../components/Tag';
 import _ from 'lodash';
-import '../../assets/fontello-dcb66a77/css/fontello.css';
+import { Motion, spring } from 'react-motion';
+import '../../assets/fontello-f8478b33/css/fontello.css';
 import './style.scss';
 import { navigateTo } from 'gatsby';
 
@@ -10,8 +11,10 @@ class index extends Component {
     super(props);
     this.state = {
       arr: ['Java', 'Js', 'Css', 'NodeJS', 'ReactJS'],
-      remainArr: [],
       stage: '',
+      text: 'Select Tag!!',
+      disabled: true,
+      showForecast: true,
     };
     this.handleStage = this.handleStage.bind(this);
     this.goLink = this.goLink.bind(this);
@@ -36,29 +39,51 @@ class index extends Component {
     });
   }
   goLink = evt => {
-    // evt.navigateTo('/about');
-    // evt.push('/about');
-    console.log('this.sattte', this.state.stage);
-    if (this.state.stage === '') {
-      return false;
-    } else {
-      navigateTo(this.state.stage);
-    }
+    // if (this.state.stage === '') {
+    //   return false;
+    // } else {
+    //   navigateTo(this.state.stage);
+    // }
 
-    console.log('@@@evt', evt);
+    this.setState({
+      showForecast: !this.state.showForecast,
+    });
   };
   render() {
+    const showForecast = this.state.showForecast;
     return (
       <div className="container">
         <div className="tags">
           <div className="tags__header">
             {/* <Tags name="JS" /> */}
             {this.state.stage === '' ? (
-              'Select Tag!!'
+              <Motion
+                defaultStyle={{ x: -100, opacity: 0 }}
+                style={{
+                  x: spring(0),
+                  opacity: spring(1),
+                }}
+              >
+                {style => (
+                  <div
+                    style={{
+                      transform: `translateY(${style.x}px)`,
+                      opacity: style.opacity,
+                    }}
+                  >
+                    select your tags
+                  </div>
+                )}
+              </Motion>
             ) : (
-              <span className="tags__show-tag-title">
-                {this.state.stage}
-              </span>
+              // <Motion
+              //   defaultStyle={{ x: 0 }}
+              //   style={{ x: spring(10) }}
+              // >
+              //   { style => <div style={} > 'Select Tag!!' </div> }
+              // </Motion>
+              //className="tags__show-tag-title"
+              <span>{this.state.stage}</span>
             )}
           </div>
           <div className="tags__content">

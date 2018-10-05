@@ -4,9 +4,12 @@
   color: white;
   display: inline-block;
   background-color: $color-tertiary;
-  margin-right: 3px;
+  margin-right: 6px;
   padding: 3px 5px;
   border-radius: 5px;
   margin-bottom: 0.5rem;
   font-size: 13px;
+  &:first-child {
+    background-color: $color-primary;
+  }
 }

@@ -1,9 +1,9 @@
 ---
-title: 나의첫번째블로그
+title: JS게시글2
 date: '2017-08-21'
-path: /posts/나의첫번째블로그
+path: /posts/JS게시글2
 tags:
-  - 'JS'
+  - 'React'
 description: '블로그를 만들면서 배우는 것들과, 앞으로의 진행방향.'
 ---
 

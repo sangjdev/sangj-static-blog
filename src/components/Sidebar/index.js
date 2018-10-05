@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link,navigateTo } from 'gatsby';
+import { Link, navigateTo } from 'gatsby';
 import onClickOutside from 'react-onclickoutside';
 import './style.scss';
 import * as baseActions from '../../state/modules/base';
@@ -19,22 +19,26 @@ class Sidebar extends Component {
       this.props.hideSidebar();
     }
   };
-  goLink( linkName ) {
+  goLink(linkName) {
     this.props.hideSidebar();
-    navigateTo('/'+linkName);
+    navigateTo('/' + linkName);
   }
   render() {
     return (
       <Fragment>
         <div className="sidebar">
           <div className="sidebar__inner">
-            <span onClick={() => this.goLink('about')}>About</span>
+            <span onClick={() => this.goLink('about')}>
+              About
+            </span>
           </div>
-          <div className="sidebar__inner">
+          {/* <div className="sidebar__inner">
             <span onClick={() => this.goLink('posts')}>Posts</span>
-          </div>
+          </div> */}
           <div className="sidebar__inner">
-            <span onClick={() => this.goLink('tags')}>Tags</span>
+            <span onClick={() => this.goLink('tags')}>
+              Tags
+            </span>
           </div>
         </div>
         <div className="dim-layer" />

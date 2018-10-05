@@ -1,0 +1,55 @@
+@import '../../assets/scss/variables';
+
+.container {
+  //   padding: 0;
+  overflow: auto;
+  //   scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
+
+  /* Reserve space for header plus some extra space for sneak peeking. */
+  //   scroll-padding-top: 15vh;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.pd0 {
+  padding: 0;
+}
+.page {
+  /* Defines the top of each page as the
+       edge that should be used for snapping */
+  //   scroll-snap-align: center none;
+  //   scroll-snap-align: start;
+  scroll-snap-align: center;
+  height: 100vh;
+  //   padding-top: 48px;
+  //   height: calc(100vh - 48px);
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  &__self {
+    text-align: center;
+    span {
+      font-size: 15px;
+    }
+  }
+}
+.page:first {
+  //   height: 100vh;
+  padding: -48px;
+  height: calc(100vh - 48px);
+}
+
+.slateblue {
+  background-color: slateblue;
+}
+.slategray {
+  background-color: slategray;
+}

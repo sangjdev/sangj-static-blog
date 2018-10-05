@@ -1,10 +1,10 @@
 ---
-title: 나의첫번째블로그
+title: JS게시글5
 date: '2017-08-21'
-path: /posts/나의첫번째블로그
+path: /posts/JS게시글5
 tags:
-  - 'JS'
-description: '블로그를 만들면서 배우는 것들과, 앞으로의 진행방향.'
+  - '계획'
+description: '블로그를 만들면서 배우는 것들과, 앞으로의 진행방향. 어쩌면 성장해가는 나의 모습을 오랫동안 볼 수 있을 곳'
 ---
 
 Do Pandas eat bananas? Check out this short video that shows that yes! pandas do

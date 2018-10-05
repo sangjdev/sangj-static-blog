@@ -7,6 +7,7 @@ import * as baseActions from '../../state/modules/base';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { throttle } from 'lodash';
+import MHeader from '../Mobile/Header';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -19,30 +20,6 @@ class Header extends Component {
     // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
     this.targetElement = document.querySelector('body');
   }
-  handleSidebar = evt => {
-    const {
-      visible,
-      hideSidebar,
-      showSidebar,
-    } = this.props;
-    console.log('evt,', evt);
-    if (visible) {
-      hideSidebar();
-      evt.preventDefault();
-      evt.stopPropagation();
-      // this.hideTargetElement();
-    } else {
-      // evt.preventDefault();
-      showSidebar();
-      evt.preventDefault();
-      evt.stopPropagation();
-      // this.showTargetElement();
-      // evt.preventDefault();
-
-      // evt.preventDefault();
-    }
-    // visible ? hideSidebar() : showSidebar();
-  };
 
   showTargetElement = () => {
     // ... some logic to show target element
@@ -86,32 +63,16 @@ class Header extends Component {
     return true;
   }
   render() {
-    const { handleSidebar } = this;
     const { visible } = this.props;
-    console.log('this.props : ', this.props);
     return (
       <Fragment>
         <div className="header">
-          <div className="header__title">
-            <Link to="/">Sang Jeong</Link>
-          </div>
-          {/* <div className="header__menu">
-            <Hamburger
-              onOpen={handleSidebar}
-              active={visible}
-            />
-          </div> */}
+          <MHeader {...this.props} />
           <div className="header__sub-title">
             <Link to="/about">About</Link>
             <Link to="/about">Posts</Link>
             <Link to="/about">Tags</Link>
           </div>
-        </div>
-        <div className="fix-menu">
-          <Hamburger
-            onOpen={handleSidebar}
-            active={visible}
-          />
         </div>
         {visible && (
           <Sidebar

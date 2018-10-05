@@ -15,6 +15,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: slug,
     });
   }
+
+  // else if (node.internal.type === 'File') {
+  //   const fileNode = getNode(node.parent);
+  //   let slug = fileNode.fields.slug;
+  //   if (typeof node.frontmatter.path !== 'undefined') {
+  //     slug = node.frontmatter.path;
+  //   }
+  //   createNodeField({
+  //     node,
+  //     name: 'slug',
+  //     value: slug,
+  //   });
+  // }
 };
 
 exports.createPages = ({ graphql, actions }) => {
