@@ -29,5 +29,5 @@ module.exports = {
       },
     },
   ],
-  pathPrefix: '/sangjdev.github.io',
+  // pathPrefix: '/sangjdev.github.io',
 };
