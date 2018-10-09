@@ -3,6 +3,12 @@ module.exports = {
     title: `Sangj blog`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     {
@@ -22,12 +28,7 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    
   ],
   // pathPrefix: '/sangjdev.github.io',
 };
