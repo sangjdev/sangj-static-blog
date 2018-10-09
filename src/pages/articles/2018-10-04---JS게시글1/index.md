@@ -1,7 +1,7 @@
 ---
-title: JS게시글1
+title: JS게시시시시글1
 date: '2017-08-21'
-path: /posts/JS게시글1
+path: /posts/JS게시시시시글1
 tags:
   - 'JS'
 description: '블로그를 만들면서 배우는 것들과, 앞으로의 진행방향.'
