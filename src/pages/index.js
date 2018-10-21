@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import Layout from '../components/layout';
-import Header from '../components/Header';
-import Post from '../components/Post';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import Layout from "../components/layout";
+import Header from "../components/Header";
+import Post from "../components/Post";
+import { connect } from "react-redux";
+import "../assets/scss/init.scss";
 // export default () => (
 //   <Layout>
 //     <Header />
@@ -47,7 +48,7 @@ export const IndexQuery = graphql`
 `;
 
 index = connect(state => ({
-  visible: state.base.visible,
+  visible: state.base.visible
 }))(index);
 
 export default index;

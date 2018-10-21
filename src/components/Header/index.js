@@ -1,30 +1,30 @@
-import React, { Component, Fragment } from 'react';
-import { Link } from 'gatsby';
-import Hamburger from '../Hamburger';
-import Sidebar from '../Sidebar';
-import './style.scss';
-import * as baseActions from '../../state/modules/base';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { throttle } from 'lodash';
-import MHeader from '../Mobile/Header';
+import React, { Component, Fragment } from "react";
+import { Link } from "gatsby";
+import Hamburger from "../Hamburger";
+import Sidebar from "../Sidebar";
+import "./style.scss";
+import * as baseActions from "../../state/modules/base";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { throttle } from "lodash";
+import MHeader from "../Mobile/Header";
 import {
   disableBodyScroll,
   enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
+  clearAllBodyScrollLocks
+} from "body-scroll-lock";
 
 class Header extends Component {
   targetElement = null;
   componentDidMount() {
     // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
-    this.targetElement = document.querySelector('body');
+    this.targetElement = document.querySelector("html");
   }
 
   showTargetElement = () => {
     // ... some logic to show target element
 
-    console.log('showTargetElement', this.targetElement);
+    console.log("showTargetElement", this.targetElement);
     // 3. Disable body scroll
     disableBodyScroll(this.targetElement);
   };
@@ -38,11 +38,11 @@ class Header extends Component {
 
   handleScroll = throttle(e => {
     const { visible } = this.props;
-    console.log('eee', e);
+    console.log("eee", e);
     if (visible) {
-      console.log('important event ', e);
+      console.log("important event ", e);
     } else {
-      console.log('!!!!!!!!!!!!!!!!!!!!!');
+      console.log("!!!!!!!!!!!!!!!!!!!!!");
     }
   }, 500);
 
@@ -54,10 +54,12 @@ class Header extends Component {
     clearAllBodyScrollLocks();
   }
   shouldComponentUpdate(nextProps) {
-    console.log('next props ', nextProps);
+    console.log("next props ", nextProps);
     if (nextProps.visible) {
+      console.log("showTargetElement");
       this.showTargetElement();
     } else {
+      console.log("hideTargetElement");
       this.hideTargetElement();
     }
     return true;
@@ -81,7 +83,7 @@ class Header extends Component {
             // preventDefault={true}
 
             // 이거를 쓰자니 뒤에 posts의 link가 클릭이 전파되고
-            outsideClickIgnoreClass={'fix-menu'}
+            outsideClickIgnoreClass={"fix-menu"}
             // 이거는 이벤트 부모한테 전파못하게 하는거임. 하나도 못막음
             // stopPropagation={true}
 
@@ -96,11 +98,11 @@ class Header extends Component {
 
 export default connect(
   state => ({
-    visible: state.base.visible,
+    visible: state.base.visible
   }),
   dispatch => ({
     BaseActions: bindActionCreators(baseActions, dispatch),
     hideSidebar: () => dispatch(baseActions.hideSidebar()),
-    showSidebar: () => dispatch(baseActions.showSidebar()),
-  }),
+    showSidebar: () => dispatch(baseActions.showSidebar())
+  })
 )(Header);
