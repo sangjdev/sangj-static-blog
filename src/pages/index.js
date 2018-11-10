@@ -24,6 +24,7 @@ class index extends Component {
     return (
       <Layout>
         <Header />
+        <span>112rl1fklfjkls</span>
         <Post {...this.props} />
       </Layout>
     );
